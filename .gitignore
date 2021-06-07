@@ -1,6 +1,9 @@
 # IDE
 .vscode/
 
-# Custom
+# Env
 .env
 db/*.sql
+
+# Custom
+notes.rst

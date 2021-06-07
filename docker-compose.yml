@@ -1,4 +1,4 @@
-version: '3.5'
+version: '3.8'
 
 services:
   postgres:
@@ -11,6 +11,7 @@ services:
       PGDATA: /data/postgres
     volumes:
        - postgres:/data/postgres
+       - ./db/demo.sql:/docker-entrypoint-initdb.d/demo.sql
     ports:
       - "5432:5432"
     networks:
@@ -26,7 +27,6 @@ services:
       PGADMIN_CONFIG_SERVER_MODE: 'False'
     volumes:
        - pgadmin:/root/.pgadmin
-
     ports:
       - "${PGADMIN_PORT:-5050}:80"
     networks:
